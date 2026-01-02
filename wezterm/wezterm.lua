@@ -1,8 +1,11 @@
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
+local wezterm_mod = "CTRL"
+
 -- This will hold the configuration.
 local config = wezterm.config_builder()
+
 config.automatically_reload_config = true
 
 config.font_size = 17.0
@@ -42,6 +45,7 @@ config.window_frame = {
   active_titlebar_bg = '#000000',
   inactive_titlebar_bg = '#000000',
 }
+
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
   local background = "#101033"
   local foreground = "#999999" -- 非アクティブ時は少し暗くすると見やすいです
@@ -54,7 +58,6 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
     foreground = "#FFFFFF"
   end
 
-
   -- タイトル作成
   -- 左右のスペース "   " を増やすと、横幅も広がります
   local title = "   " .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. "   "
@@ -65,6 +68,7 @@ wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_wid
     { Text = title },
   }
 end)
+
 config.show_new_tab_button_in_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 
@@ -92,35 +96,41 @@ end)
 config.keys = {
   {
     key = "f",
-    mods = "CTRL",
+    mods = wezterm_mod
+  ,
     action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain" },
   },{
     key = "d",
-    mods = "CTRL",
+    mods = wezterm_mod
+  ,
     action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" },
   },{
     key = "k",
-    mods = "CTRL",
+    mods = wezterm_mod
+  ,
     action = wezterm.action.ActivatePaneDirection "Up",
   },{
     key = "j",
-    mods = "CTRL",
+    mods = wezterm_mod
+  ,
     action = wezterm.action.ActivatePaneDirection "Down",
   },{
     key = "h",
-    mods = "CTRL",
+    mods = wezterm_mod
+  ,
     action = wezterm.action.ActivatePaneDirection "Left",
   },{
     key = "l",
-    mods = "CTRL",
+    mods = wezterm_mod
+  ,
     action = wezterm.action.ActivatePaneDirection "Right",
   },{
     key = 'w',
-    mods = 'CTRL',
+    mods = wezterm_mod,
     action = wezterm.action.CloseCurrentPane { confirm = true },
   },{
     key = 'z',
-    mods = 'CTRL',
+    mods = wezterm_mod,
     action = wezterm.action.ToggleFullScreen,
   },
 }
