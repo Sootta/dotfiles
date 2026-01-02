@@ -1,0 +1,24 @@
+theme="tokyonight_moon"
+
+[editor]
+completion-trigger-len = 1
+completion-replace = true
+true-color = true
+popup-border = "all"
+soft-wrap.enable = true
+end-of-line-diagnostics = "hint"
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true 
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+skip-levels = 1
+
+

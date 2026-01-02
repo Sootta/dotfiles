@@ -1,0 +1,41 @@
+font_size 17
+font_family Hack
+
+background_opacity 0.9
+
+scrollback_lines 10000
+
+enabled_layouts Grid
+
+tab_bar_edge top
+tab_bar_style powerline
+tab_powerline_style angled
+tab_title_template " {index}: {'{: <501}'.format(title)}"
+
+kitty_mod cmd
+
+map kitty_mod+d new_window_with_cwd
+map kitty_mod+w close_window
+map kitty_mod+t new_tab
+
+#タブの移動
+map kitty_mod+h next_window
+
+# 1行ごとのスクロール
+map kitty_mod+k scroll_line_up
+map kitty_mod+j scroll_line_down
+
+# ページごとのスクロール
+map kitty_mod+ctrl+k scroll_page_up
+map kitty_mod+ctrl+j scroll_page_down
+
+macos_option_as_alt yes
+macos_quit_when_last_window_closed yes
+macos_traditional_fullscreen yes
+
+confirm_os_window_close 0
+
+# BEGIN_KITTY_THEME
+# Tokyo Night Moon
+include current-theme.conf
+# END_KITTY_THEME

@@ -1,0 +1,18 @@
+[[language]]
+name = "rust"
+language-servers = ["rust-analyzer"]
+auto-format = true
+
+[language-server.rust-analyzer]
+command = "rust-analyzer"
+
+[[language]]
+name = "go"
+language-servers = ["gopls"]
+
+[language-server.gopls]
+command = "gopls"
+
+#[[language]]
+#name = "python"
+#auto-format = true
