@@ -1,7 +1,7 @@
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
 
-local wezterm_mod = "CTRL"
+local wezterm_mod = "OPT"
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
@@ -23,6 +23,7 @@ config.color_scheme = 'Tokyo Night Moon'
 -- 上のバーを消す
 config.window_decorations = "RESIZE"
 
+config.send_composed_key_when_left_alt_is_pressed = true
 
 config.colors = {
   tab_bar = {
