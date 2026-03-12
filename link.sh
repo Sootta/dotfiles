@@ -2,6 +2,7 @@
 rm -rf ~/.config/kitty
 rm -rf ~/.config/wezterm
 rm -rf ~/.config/helix
+rm -rf ~/.config/starship.toml
 
 ln -s ~/dotfiles/kitty ~/.config/kitty
 ln -s ~/dotfiles/wezterm ~/.config/wezterm
